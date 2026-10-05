@@ -1,12 +1,18 @@
 # write your code here
-
 nombres = []
-friends=input("Enter the number of friends joining (including you):")
-if friends > "0":
-    for friends in range(int(friends)):
+aRepartir = 1
+friends=int(input("Enter the number of friends joining (including you):\n"))
+
+if friends > 0:
+    print("Enter the name of every friend (including you), each on a new line:")
+
+    for _ in range(friends):
         nombres.append(input())
 
-    people = {nombre: 0 for nombre in nombres}
+    total_bill = float(input("Enter the total bill value:\n"))
+    aRepartir = round(total_bill / friends, 2)
+
+    people = {nombre: aRepartir for nombre in nombres}
 
     print(people)
 else:
